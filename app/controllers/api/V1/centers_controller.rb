@@ -1,4 +1,4 @@
-class CentersController < ApplicationController
+class Api::V1::CentersController < ApplicationController
   before_action :set_center, only: [:show, :update, :destroy]
 
   # GET /centers
@@ -18,7 +18,7 @@ class CentersController < ApplicationController
     @center = Center.new(center_params)
 
     if @center.save
-      render json: @center, status: :created, location: @center
+      render json: @center, status: :created, location: api_v1_centers_path(@center)
     else
       render json: @center.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class CentersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def center_params
-      params.require(:center).permit(:building, :hall, :address, :city, :state, :price, :capacity)
+      params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
     end
 end
