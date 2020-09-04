@@ -8,4 +8,8 @@ FactoryBot.define do
     price { Faker::Number.number(digits: 6) }
     capacity { Faker::Number.number(digits: 6) }
   end
+
+  factory :user do
+    username { uchenry }
+  end
 end

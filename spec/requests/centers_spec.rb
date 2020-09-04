@@ -27,7 +27,6 @@ RSpec.describe "/centers", type: :request do
     end
   end
 
-
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new Center" do
@@ -41,7 +40,7 @@ RSpec.describe "/centers", type: :request do
         post centers_url,
              params: { center: valid_attributes }, headers: valid_headers, as: :json
         expect(response).to have_http_status(:created)
-        expect(response.content_type).to match(a_string_including("application/json"))
+        expect(response.content_type).to match(a_string_including("application/json; charset=utf-8"))
       end
     end
 
@@ -65,7 +64,7 @@ RSpec.describe "/centers", type: :request do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) {
-        { :center_id => 1, address: '',
+        { :center_id => 1,
           :building => 'Brisbane',
           :hall => 'Vogue', :city => 'Denver',
           :state => 'Colorado', :price => 1500, :capacity => 200 
@@ -74,14 +73,10 @@ RSpec.describe "/centers", type: :request do
 
       it "updates the requested center" do
         center = Center.create! valid_attributes
-        pp center
-        pp center_url(center)
         patch center_url(center),
               params: { center: new_attributes }, headers: valid_headers, as: :json
         center.reload
         expect(response).to have_http_status(200)
-
-        # skip("Add assertions for updated state")
       end
 
       it "renders a JSON response with the center" do
@@ -115,16 +110,3 @@ RSpec.describe "/centers", type: :request do
   end
 end
 
-# describe 'get', :type => :request do
-#   let!(:centers) {FactoryBot.create_list(:center, 5)}
-
-#   before {get '/api/v1/centers'}
-
-#   it 'returns all centers' do
-#     expect(JSON.parse(response.body).size).to eq(5)
-#   end
-
-#   it 'returns status code 200' do
-#     expect(response).to have_http_status(:success)
-#   end
-# end
