@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       render json: {
         status: :created,
         logged_in: true,
-        user: user
+        current_user: user
       }
     else
       render json: { status: 401 }
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     if @current_user
       render json: {
         logged_in: true,
-        user: @current_user
+        current_user: @current_user
       }
     else
       render json: {

@@ -1,11 +1,25 @@
 class AppointmentsController < ApplicationController 
   def create
-    @appointment = Appointment.new(appointment_params)
-
-    if @appointment.save
-      render json: @appointment, status: :created, location: appointments_path(@center)
+    appointment = Appointment.create!(appointment_params)
+    if appointment
+      render json: {
+        status: :created,
+        appointment: appointment
+      }
     else
-      render json: @appointment.errors, status: :unprocessable_entity
+      render json: {
+        status: 401
+      }
+    end
+  end
+
+  def show 
+    appointment = Appointment.all
+    if appointment
+      render json: {
+        status: :success,
+        appointments: appointment
+      }
     end
   end
 
