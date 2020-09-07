@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Helpers
   def center_url(center)
     "/api/v1/centers/#{center[:id]}"

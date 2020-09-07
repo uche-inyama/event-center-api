@@ -1,21 +1,27 @@
+# frozen_string_literal: true
+
 class AppointmentsController < ApplicationController
   def create
     appointment = Appointment.create!(appointment_params)
-    render json: {
-      status: :created,
-      appointment: appointment
-    } unless appointment
+    unless appointment
       render json: {
-        status: 401
+        status: :created,
+        appointment: appointment
+      }
+    end
+    render json: {
+      status: 401
     }
   end
 
   def show
     appointment = Appointment.all
-    render json: {
-      status: :success,
-      appointments: appointment
-    } unless appointment
+    unless appointment
+      render json: {
+        status: :success,
+        appointments: appointment
+      }
+    end
   end
 
   private
