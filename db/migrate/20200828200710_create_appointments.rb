@@ -4,7 +4,7 @@ class CreateAppointments < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :hall
       t.string :email
-      t.string  :city
+      t.string :city
 
       t.timestamps
     end

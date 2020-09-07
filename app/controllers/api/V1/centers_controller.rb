@@ -1,5 +1,5 @@
 class Api::V1::CentersController < ApplicationController
-  before_action :set_center, only: [:show, :update, :destroy]
+  before_action :set_center, only: %i[show update destroy]
 
   def index
     @centers = Center.all
@@ -34,11 +34,12 @@ class Api::V1::CentersController < ApplicationController
   end
 
   private
-    def set_center
-      @center = Center.find(params[:id])
-    end
 
-    def center_params
-      params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
-    end
+  def set_center
+    @center = Center.find(params[:id])
+  end
+
+  def center_params
+    params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
+  end
 end

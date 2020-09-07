@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
   def create
     user = User.create!(
-      username: params["user"]["username"]
+      username: params['user']['username']
     )
     if user
       session[:user_id] = user.id

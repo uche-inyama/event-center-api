@@ -4,6 +4,6 @@ module Helpers
   end
 
   def centers_url
-    url = "/api/v1/centers"
+    url = '/api/v1/centers'
   end
 end

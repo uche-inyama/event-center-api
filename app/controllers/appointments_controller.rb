@@ -1,4 +1,4 @@
-class AppointmentsController < ApplicationController 
+class AppointmentsController < ApplicationController
   def create
     appointment = Appointment.create!(appointment_params)
     if appointment
@@ -13,8 +13,9 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  def show 
+  def show
     appointment = Appointment.all
+    return
     if appointment
       render json: {
         status: :success,
