@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
 
   def show
     appointment = Appointment.all
-    unless appointment
+    return unless appointment
       render json: {
         status: :success,
         appointments: appointment

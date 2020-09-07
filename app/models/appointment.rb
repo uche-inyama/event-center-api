@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Appointment < ApplicationRecord
   validates :username, presence: true
   validates :email, presence: true
