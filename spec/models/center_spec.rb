@@ -2,7 +2,7 @@ require 'rails_helper'
 require 'pp'
 
 RSpec.describe Center, type: :model do
-  it 'validates presence of 'do
+  it 'validates presence of' do
     center = Center.create(
       building: '', hall: '',
       city: '', state: '',
