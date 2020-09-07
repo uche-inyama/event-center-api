@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Api::V1::CentersController < ApplicationController
   before_action :set_center, only: %i[show update destroy]
 
