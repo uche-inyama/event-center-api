@@ -9,14 +9,14 @@ RSpec.describe '/centers', type: :request do
   end
 
   let(:invalid_attributes) do
-  { building: '',
-    hall: '', city: '',
-    state: '', price: '', capacity: '' }
+    { building: '',
+      hall: '', city: '',
+      state: '', price: '', capacity: '' }
   end
 
-  # let(:valid_headers) {
-  #   {}
-  # }
+  let(:valid_headers) {
+    {}
+  }
 
   describe 'GET /index' do
     it 'renders a successful response' do
