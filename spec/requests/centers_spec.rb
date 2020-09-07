@@ -16,7 +16,6 @@ RSpec.describe '/centers', type: :request do
 
   let(:valid_headers) {}
   
-
   describe 'GET /index' do
     it 'renders a successful response' do
       Center.create! valid_attributes
@@ -24,7 +23,7 @@ RSpec.describe '/centers', type: :request do
       expect(response).to be_successful
     end
   end
-
+  
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new Center' do
