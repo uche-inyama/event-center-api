@@ -15,13 +15,10 @@ class AppointmentsController < ApplicationController
 
   def show
     appointment = Appointment.all
-    return
-    if appointment
-      render json: {
-        status: :success,
-        appointments: appointment
-      }
-    end
+    return  render json: {
+      status: :success,
+      appointments: appointment
+    } unless appointment     
   end
 
   private

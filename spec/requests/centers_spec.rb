@@ -8,10 +8,11 @@ RSpec.describe '/centers', type: :request do
       state: 'California', price: 1200, capacity: 300 }
   end
 
-  let(:invalid_attributes)
+  let(:invalid_attributes) do
   { building: '',
     hall: '', city: '',
     state: '', price: '', capacity: '' }
+  end
 
   # let(:valid_headers) {
   #   {}
@@ -19,7 +20,7 @@ RSpec.describe '/centers', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      center = Center.create! valid_attributes
+      Center.create! valid_attributes
       get centers_url
       expect(response).to be_successful
     end
