@@ -12,9 +12,9 @@ class AppointmentsController < ApplicationController
     end
   end
 
+    # rubocop:disable
   def show
     appointment = Appointment.all
-    # rubocop:disable
     if appointment
       render json: {
         status: :success,
