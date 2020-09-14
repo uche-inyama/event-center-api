@@ -14,7 +14,7 @@ class AppointmentsController < ApplicationController
 
   def show
     appointment = Appointment.all
-   # rubocop:disable
+    # rubocop:disable
     if appointment
       render json: {
         status: :success,
