@@ -4,16 +4,24 @@ require 'pp'
 RSpec.describe '/centers', type: :request do
   let(:valid_attributes) do
     { building: 'Avalon',
-      hall: 'Brisk', city: 'Imogeneborough',
-      state: 'California', price: 1200, capacity: 300, 
-      image:'http://res.cloudinary.com/ddcakt97r/image/upload/v1599940689/event_center/meta-studio-35-PJXAjKduyjQ-unsplash_onzzzc.jpg'
+      hall: 'Brisk', 
+      city: 'Imogeneborough',
+      state: 'California', 
+      price: 1200, 
+      capacity: 300,
+      image: 'http://res.cloudinary.com/ddcakt97r/image/upload/v1599940689/event_center/meta-studio-35-PJXAjKduyjQ-unsplash_onzzzc.jpg'
     }
   end
 
   let(:invalid_attributes) do
     { building: '',
-      hall: '', city: '',
-      state: '', price: '', capacity: '', image: ''}
+      hall: '', 
+      city: '',
+      state: '', 
+      price: '', 
+      capacity: '', 
+      image: ''
+    }
   end
 
   let(:valid_headers) {}
@@ -68,7 +76,7 @@ RSpec.describe '/centers', type: :request do
           hall: 'Vogue', city: 'Denver',
           state: 'Colorado', price: 1500, capacity: 200,
           image: 'http://res.cloudinary.com/ddcakt97r/image/upload/v1599940689/event_center/meta-studio-35-PJXAjKduyjQ-unsplash_onzzzc.jpg' 
-      }
+        }
       end
 
       it 'updates the requested center' do

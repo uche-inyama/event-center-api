@@ -5,10 +5,10 @@ class AppointmentsController < ApplicationController
       render json: {
         status: :created,
         appointment: appointment
-      }else
-        render json: {
-          status: 401
-        }
+      } else
+          render json: {
+            status: 401
+          }
     end
   end
 
@@ -27,5 +27,4 @@ class AppointmentsController < ApplicationController
   def appointment_params
     params.require(:appointment).permit(:username, :hall, :email, :city)
   end
-  
 end

@@ -1,8 +1,4 @@
 FactoryBot.define do
-  factory :image do
-    image { "MyString" }
-  end
-
   factory :center do
     building { Faker::Address.full_address }
     hall { Faker::Name.name }
