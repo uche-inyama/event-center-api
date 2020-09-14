@@ -12,6 +12,10 @@ Additional description about the project and its features.
 
 The front-end applications consuming the end points: [Admin](https://quirky-darwin-4f9d6e.netlify.app) and [users](https://heuristic-hawking-5ab9f8.netlify.app/)
 
+The Admin, is a react application where the event centers are created, updated and deleted.
+
+The users, is a react application designed to show the list of event centers, detail of each event center and where users can book an appointment to come for physical assessments of the event center.
+
 ## Getting Started
 
 ### Prerequisites
@@ -23,6 +27,7 @@ Clone the repository with `git@github.com:uche-inyama/event-center-api.git` to g
 ### Installation and Setup
 
 #### Install gem with: 
+
 -  bundle install.
 
 #### Setup development database with:
