@@ -3,7 +3,7 @@ require 'pp'
 
 RSpec.describe '/centers', type: :request do
   let(:valid_attributes) do
-    { 
+    {
       building: 'Avalon',
       hall: 'Brisk',
       city: 'Imogeneborough',
@@ -73,7 +73,7 @@ RSpec.describe '/centers', type: :request do
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
-        { 
+        {
           center_id: 1,
           building: 'Brisbane',
           hall: 'Vogue', city: 'Denver',
