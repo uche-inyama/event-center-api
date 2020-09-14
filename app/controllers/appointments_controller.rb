@@ -12,7 +12,7 @@ class AppointmentsController < ApplicationController
     end
   end
 
-    # rubocop:disable
+  # rubocop:disable
   def show
     appointment = Appointment.all
     if appointment
