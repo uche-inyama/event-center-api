@@ -1,24 +1,65 @@
-# README
+# Project Name: Event Center API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> In this project I implemented an API, consequently each action from the controllers return a Json response.
 
-Things you may want to cover:
+Additional description about the project and its features.
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails,
 
-* Configuration
+## Related links
 
-* Database creation
+The front-end applications consuming the end points: [Admin](https://quirky-darwin-4f9d6e.netlify.app) and [users](https://heuristic-hawking-5ab9f8.netlify.app/)
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+### Prerequisites
 
-* Services (job queues, cache servers, search engines, etc.)
+- Ruby on Rails and Postgres
 
-* Deployment instructions
+Clone the repository with `git@github.com:uche-inyama/event-center-api.git` to get a local copy.
 
-* ...
+### Installation and Setup
+
+#### Install gem with: 
+-  bundle install.
+
+#### Setup development database with:
+
+- rails db:create
+- rails db:migrate
+
+### Usage
+
+    run rails server
+
+Open http://localhost:3000/ in your browser
+
+### Run tests
+
+   rspec
+
+### Deployment:
+
+https://serene-eyrie-97376.herokuapp.com/
+
+## Author
+
+👤 **Inyama, Uchechukwu Henry**
+
+- Github: [@githubhandle](https://github.com/uche-inyama)
+- Twitter: [@twitterhandle](https://twitter.com/euuoc)
+- Linkedin: [linkedin](https://www.linkedin.com/in/uchechukwu-inyama-b3429a105/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.
