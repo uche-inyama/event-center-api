@@ -3,7 +3,8 @@ require 'pp'
 
 RSpec.describe '/centers', type: :request do
   let(:valid_attributes) do
-    { building: 'Avalon',
+    { 
+      building: 'Avalon',
       hall: 'Brisk',
       city: 'Imogeneborough',
       state: 'California',
@@ -14,7 +15,7 @@ RSpec.describe '/centers', type: :request do
   end
 
   let(:invalid_attributes) do
-    { 
+    {
       building: '',
       hall: '',
       city: '',
@@ -72,11 +73,12 @@ RSpec.describe '/centers', type: :request do
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
-        { center_id: 1,
+        { 
+          center_id: 1,
           building: 'Brisbane',
           hall: 'Vogue', city: 'Denver',
           state: 'Colorado', price: 1500, capacity: 200,
-          image: 'http://res.cloudinary.com/ddcakt97r/image/upload/v1599940689/event_center/meta-studio-35-PJXAjKduyjQ-unsplash_onzzzc.jpg' 
+          image: 'http://res.cloudinary.com/ddcakt97r/image/upload/v1599940689/event_center/meta-studio-35-PJXAjKduyjQ-unsplash_onzzzc.jpg'
         }
       end
 
