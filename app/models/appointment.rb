@@ -2,7 +2,7 @@ class Appointment < ApplicationRecord
   belongs_to :user
   belongs_to :center
   validates :username, presence: true,
-                        uniqueness: true
+                       uniqueness: true
 
   validates :city, presence: true
   validates :hall, presence: true
