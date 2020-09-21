@@ -20,6 +20,7 @@ class AppointmentsController < ApplicationController
         status: :success,
         appointments: appointment
       }
+    end
   end
 
   private
