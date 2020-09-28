@@ -6,7 +6,7 @@ RSpec.describe Appointment, type: :model do
       hall: '',
       city: '',
       username: '',
-      email: ''
+      email: '',
     )
     appointment.valid?
     expect(appointment.errors[:username]).to include('can\'t be blank')
