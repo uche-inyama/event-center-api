@@ -13,7 +13,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    appointments = Appointment.find_by(username: params[:id])
+    appointments = Appointment.find_by(user_id: params[:id])
     return render json: {
       status: :ok,
       appointments: appointments
