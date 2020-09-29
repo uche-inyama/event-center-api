@@ -1,7 +1,8 @@
 class AppointmentsController < ApplicationController
   def create
-    appointment = Appointment.create!(appointment_params)
-    if appointment
+    @center = Center.find_by(params[:center_id])
+    appointment = @center.appointments.build(appointment_params)
+    if appointment.save
       render json: {
         status: :created,
         appointment: appointment
@@ -22,6 +23,6 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:username, :hall, :email, :city, :date)
+    params.require(:appointment).permit(:username, :hall, :email, :city, :date, :user_id)
   end
 end
