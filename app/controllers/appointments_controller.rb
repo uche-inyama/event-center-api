@@ -14,8 +14,8 @@ class AppointmentsController < ApplicationController
   end
 
   def show
-    appointments = Appointment.where({user_id: params[:id]})
-    return render json: {
+    appointments = Appointment.where({ user_id: params[:id] })
+    render json: {
       status: :ok,
       appointments: appointments
     }
