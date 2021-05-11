@@ -10,7 +10,7 @@ Additional description about the project and its features.
 
 ## Related links
 
-The front-end applications consuming the end points: [Admin](https://quirky-darwin-4f9d6e.netlify.app) and [users](https://heuristic-hawking-5ab9f8.netlify.app/)
+The front-end applications consuming the end points: [Admin](https://jovial-meitner-20063a.netlify.app/) and [users](https://inspiring-swirles-e2b829.netlify.app/)
 
 The Admin, is a react application where the event centers are created, updated and deleted.
 
