@@ -1,4 +1,4 @@
-module Type
+module Types
   module Input
     class CenterInputType < Types::BaseInputObject
       argument :building, String, required: true
