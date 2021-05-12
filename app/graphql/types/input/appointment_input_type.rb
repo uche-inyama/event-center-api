@@ -1,6 +1,6 @@
 module Types
   module Input
-    class ContactInputType < Types::BaseInputObject
+    class AppointmentInputType < Types::BaseInputObject
       argument :username, String, required: true
       argument :hall, String, required: true
       argument :email, String, required: true
