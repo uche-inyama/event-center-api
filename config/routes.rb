@@ -13,4 +13,5 @@ Rails.application.routes.draw do
       resources :centers
     end
   end
+  match '*path', via: [:options], to: lambda {|_| [204, { 'Content-Type' => 'text/plain' }]}
 end
