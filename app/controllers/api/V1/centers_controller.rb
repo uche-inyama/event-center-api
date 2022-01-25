@@ -7,12 +7,13 @@ class Api::V1::CentersController < ApplicationController
     render json: @centers
   end
 
-  def show
-    render json: @center
+  def new
+    @center = Center.new
   end
 
-  def create
+   def create
     @center = Center.new(center_params)
+    
 
     if @center.save
       render json: @center, status: :created, location: api_v1_centers_path(@center)
@@ -21,8 +22,13 @@ class Api::V1::CentersController < ApplicationController
     end
   end
 
+  def show
+    render json: @center
+  end
+
+
   def update
-    if @center.update(center_params)
+    if @center.update(update_params)
       render json: @center
     else
       render json: @center.errors, status: :unprocessable_entity
@@ -40,6 +46,10 @@ class Api::V1::CentersController < ApplicationController
   end
 
   def center_params
-    params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
+    params.permit(:building, :hall, :address, :city, :capacity, :price, :state, :image)
+  end
+
+  def update_params
+    params.permit(:id, :building, :hall, :address, :city, :capacity, :price, :state, :image)
   end
 end
