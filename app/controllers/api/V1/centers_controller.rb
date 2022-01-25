@@ -1,0 +1,55 @@
+class Api::V1::CentersController < ApplicationController
+  before_action :set_center, only: %i[show update destroy]
+
+  def index
+    @centers = Center.all
+
+    render json: @centers
+  end
+
+  def new
+    @center = Center.new
+  end
+
+   def create
+    @center = Center.new(center_params)
+    
+
+    if @center.save
+      render json: @center, status: :created, location: api_v1_centers_path(@center)
+    else
+      render json: @center.errors, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    render json: @center
+  end
+
+
+  def update
+    if @center.update(update_params)
+      render json: @center
+    else
+      render json: @center.errors, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @center.destroy
+  end
+
+  private
+
+  def set_center
+    @center = Center.find(params[:id])
+  end
+
+  def center_params
+    params.permit(:building, :hall, :address, :city, :capacity, :price, :state, :image)
+  end
+
+  def update_params
+    params.permit(:id, :building, :hall, :address, :city, :capacity, :price, :state, :image)
+  end
+end
