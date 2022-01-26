@@ -22,7 +22,7 @@ class Api::V1::CentersController < ApplicationController
   end
 
   def update
-    if @center.update(center_params)
+    if @center.update(update_params)
       render json: @center
     else
       render json: @center.errors, status: :unprocessable_entity
@@ -41,5 +41,10 @@ class Api::V1::CentersController < ApplicationController
 
   def center_params
     params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
+  end
+
+  def update_params
+    params.require(:center).permit(:id, :building, :hall, :price, :capacity, :city, :state, :image)
+
   end
 end
