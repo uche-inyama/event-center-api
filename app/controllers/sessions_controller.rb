@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params['user']['username'])
     if user
       session[:user_id] = user.id
-      render json: status: :created, logged_in: true, currentUser: user
+      render json:  currentUser: user, logged_in: true, status: :created
     else
       render json: status: 401
     end
