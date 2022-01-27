@@ -15,7 +15,7 @@ class Api::V1::CentersController < ApplicationController
     @center = Center.new(center_params)
 
     if @center.save
-      render json: @center, status: :created
+      render json: @center, status: :created, location: api_v1_centers_path(@center)
     else
       render json: @center.errors, status: :unprocessable_entity
     end
@@ -40,7 +40,7 @@ class Api::V1::CentersController < ApplicationController
   end
 
   def center_params
-    params.permit(:building, :hall, :ddress, :price, :capacity, :city, :state, :image)
+    params.permit(:building, :hall, :address, :price, :capacity, :city, :state, :image)
   end
 
   def update_params
