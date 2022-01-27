@@ -1,6 +1,6 @@
 module Queries
   class FetchCenter < Queries::BaseQuery
-    type Types::CenterType, null: false
+    type Types::CenterInputType, null: false
     argument :id, ID, required: true
 
     def resolve(id:)
