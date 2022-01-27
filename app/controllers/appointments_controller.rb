@@ -3,16 +3,16 @@ class AppointmentsController < ApplicationController
     @center = Center.find_by(params[:center_id])
     appointment = @center.appointments.build(appointment_params)
       if appointment.save
-        render json: appointment, status: :created
+        render json: { appointment, status: :created }
       else
-        render json: status: 401
+        render json: { status: 401 }
       end
     end
   end
 
   def show
     appointments = Appointment.where({ user_id: params[:id] })
-    render json: appointments, status: :ok
+    render json: { appointments, status: :ok }
   end
 
   private
