@@ -7,7 +7,7 @@ module Mutations
       center_params = Hash params
       center = Center.new(center_params)
       if center.save
-        center: center
+        center
       end
     end
   end

@@ -7,7 +7,7 @@ module Mutations
       appointment_params = Hash params
       appointment = Appointment.new(appointment_params)
       if appointment.save
-        appointment: appointment
+        appointment
       end
     end
   end
