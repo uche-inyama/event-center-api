@@ -8,10 +8,6 @@ module Mutations
       appointment = Appointment.new(appointment_params)
       if appointment.save
         appointment: appointment
-        errors: []
-      else
-        appointment: nil
-        errors: appointment.errors.full_messages
       end
     end
   end

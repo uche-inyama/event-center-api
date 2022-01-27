@@ -8,10 +8,6 @@ module Mutations
       center = Center.new(center_params)
       if center.save
         center: center
-        errors: []
-      else
-        center: nil
-        errors: center.errors.full_messages
       end
     end
   end
