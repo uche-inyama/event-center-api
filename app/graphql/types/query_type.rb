@@ -7,7 +7,7 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    field :fetch_contact, resolver: Queries::FetchCenter 
+    field :fetch_center, resolver: Queries::FetchCenter 
     field :fetch_appointment, resolver: Queries::FetchAppointment
   end
 end

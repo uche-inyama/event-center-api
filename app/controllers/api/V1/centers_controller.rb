@@ -40,11 +40,10 @@ class Api::V1::CentersController < ApplicationController
   end
 
   def center_params
-    params.require(:center).permit(:building, :hall, :price, :capacity, :city, :state, :image)
+    params.permit(:building, :hall, :ddress, :price, :capacity, :city, :state, :image)
   end
 
   def update_params
-    params.require(:center).permit(:id, :building, :hall, :price, :capacity, :city, :state, :image)
-
+    params.permit(:id, :building, :hall, :address, :price, :capacity, :city, :state, :image)
   end
 end

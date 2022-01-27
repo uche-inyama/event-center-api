@@ -1,29 +1,19 @@
 class SessionsController < ApplicationController
   def create
-    user = User
-      .find_by(username: params['user']['username'])
+    user = User.find_by(username: params['user']['username'])
     if user
       session[:user_id] = user.id
-      render json: {
-        status: :created,
-        logged_in: true,
-        currentUser: user
-      }
+      render json: status: :created, logged_in: true, currentUser: user
     else
-      render json: { status: 401 }
+      render json: status: 401
     end
   end
 
   def logged_in
     if @current_user
-      render json: {
-        logged_in: true,
-        current_user: @current_user
-      }
+      render json: logged_in: true, current_user: @current_user
     else
-      render json: {
-        logged_in: false
-      }
+      render json: logged_in: false
     end
   end
 

@@ -1,16 +1,11 @@
 class RegistrationsController < ApplicationController
   def create
-    user = User.create!(
-      username: params['user']['username']
-    )
+    user = User.create!(username: params['user']['username'])
     if user
       session[:user_id] = user.id
-      render json: {
-        status: :created,
-        user: user
-      }
+      render json: status: :created, user: user
     else
-      render json: { status: 500 }
+      render json: status: 500
     end
   end
 end
