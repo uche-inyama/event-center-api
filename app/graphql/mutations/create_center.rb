@@ -1,7 +1,8 @@
 module Mutations
   class AddCenter < Mutations::BaseMutation
-    argument :params, Types::Input::CenterInputType, null: false
-    field :creat_center, Types::CenterType, null: false
+    null true
+    argument :params, Types::Input::CenterInputType
+    field :creat_center, Types::CenterType
 
     def resolve(params:)
       center_params = Hash params
