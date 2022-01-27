@@ -1,6 +1,6 @@
 module Queries
   class FetchAppointment < Queries::BaseQuery
-    type Types::AppointmentInputType, null: false
+    type Types::AppointmentType, null: false
     argument :id, ID, required: true
 
     def resolve(id:)
