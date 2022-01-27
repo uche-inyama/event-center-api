@@ -1,5 +1,5 @@
-module Mutations
-  class AddCenter < Mutations::BaseMutation
+# module Mutations
+  class Mutations::AddCenter < Mutations::BaseMutation
     null true
     argument :params, Types::Input::CenterInputType
     field :creat_center, Types::CenterType
@@ -12,4 +12,4 @@ module Mutations
       end
     end
   end
-end
+# end

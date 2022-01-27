@@ -1,5 +1,5 @@
-module Mutations
-  class CreateAppointment < Mutations::BaseMutation
+# module Mutations
+  class Mutations::CreateAppointment < Mutations::BaseMutation
     argument :params, Types::Input::AppointmentInputType, null: false
     field :appointment, Types::AppointmentType, null: false
 
@@ -11,4 +11,4 @@ module Mutations
       end
     end
   end
-end
+# end
